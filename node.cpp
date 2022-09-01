@@ -5,37 +5,32 @@ node::node(){
   data_ = 0;
   link_ = nullptr;
 }
-node::node(const int& initdata, node * initlink)
-{
+node::node(const int& initdata, node * initlink){
     data_ = initdata;
     link_ = initlink;
 }
 
-int node::data() const
-{
+int node::data() const{
     return data_;
 }
 
-node * node::link()
-{
+node * node::link(){
     return link_;
 }
 
 //returns constant node pointer
-const node * node::link() const//This is a const function - I promise the function doesn't change anything - On a const node*, you can only call const functions
-{
+const node * node::link() const{
     return link_;
 }
 
-void node::set_data(const int & newdata)
-{
+void node::set_data(const int & newdata){
     data_ = newdata;
 }
 
-void node::set_link(node * newlink)
-{
+void node::set_link(node * newlink){
     link_ = newlink;
 }
+
 std::size_t list_index(node*head_ptr, int target){
   int counter = 0;
   for (const node *p = head_ptr; p != nullptr; p = p->link()){
@@ -70,7 +65,6 @@ int main(){
   }
   cout << list_index(head ,3) << endl;
   cout << list_at(head ,2) << endl;
-
 
   return 0;
 }
